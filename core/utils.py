@@ -30,13 +30,10 @@ def get_plot(z, w, area, colors):
 
 def get_boxplot(data):
     plt.figure(figsize=(10,5))
-    plt.title('Box Plot')
-    plt.xlabel('open')
-    plt.ylabel('high')
+    plt.title('Box Plot for APPL Low, APPL High, APPL Open, AAPL Close')
     plt.boxplot(data)
     graph = get_graph()
     return graph
-
 
 
 def get_histogram(data_5):
