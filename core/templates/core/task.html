@@ -1,0 +1,69 @@
+{% extends 'base.html' %} 
+
+{% block title %}
+2
+{% endblock title %}
+
+{% block content %}
+<br>
+<br>
+<nav class="navbar fixed-top navbar-dark bg-dark">
+    
+    <a class="navbar-brand" href="/">Upload CSV</a>
+    <a class="navbar-brand" href="data">Explore Data</a>
+    <a class="navbar-brand" href="task1">Check Task 01</a>
+
+  </nav>
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+<form action="" method="POST" id="form" class="ui form" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form}}
+    <br>
+    <br>
+    <button type="submit" class="ui secondary button"><i class="cloud icon"></i> Upload</button>
+</form>
+<br>
+<br>
+<br>
+<br>
+<center>
+<button class="ui right labeled icon button">
+  <i class="right arrow icon"></i>
+  <a href="data">Show Data
+</button>
+</center>
+{% comment %} 
+<script>
+
+    const form = document.getElementById('form')
+    form.addEventListener("submit", submitHandler)
+
+    function submitHandler(e){
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: window.location.pathname,
+            data: $("#form").serializer(),
+            contentType:false,
+            mimeType: 'multipart/form-data',
+            dataType: 'json',
+            success: function(data) {
+                if (data.msg == 'Success'){
+                    alert('Form is Submitted');
+                }
+            }
+        })
+    }
+
+</script> {% endcomment %}
+
+
+
+
+{% endblock content %}
